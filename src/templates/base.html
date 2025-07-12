@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8"> 
+    <title>{% block title %}{% endblock %} - Open Kichwa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    {% block header %}{% endblock %}
+
+    <link href="{{ url_for('static', filename='css/navbar.css') }}" rel="stylesheet">
+</head>
+
+<body>
+
+    <div>
+        <img class="responsive-logo" src="{{ url_for('static', filename='images/Logo + text no bg.png') }}" alt="Logo">
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="#">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.endpoint == 'index' %}active{% endif %}" href="">{{ gettext("Home Button") }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.endpoint == 'about' %}active{% endif %}" href="">{{ gettext("About") }}</a>
+                    </li>
+                </ul>
+
+                <!-- MOBILE Language Selector -->
+                <div class="lang-selector d-lg-none w-100 mt-3 d-flex justify-content-end">
+                    <div class="dropdown">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        {{ 'EN' if lang == 'en' else 'ES' }}
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="{{ url_for(request.endpoint, lang='en', **request.view_args) }}">EN</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for(request.endpoint, lang='es', **request.view_args) }}">ES</a></li>
+                    </ul>
+                    </div>
+                </div>
+
+                <!-- DESKTOP Language Selector -->
+                <div class="dropdown d-none d-lg-block ms-auto">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        {{ 'ES' if lang == 'es' else 'EN' }}
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="{{ url_for(request.endpoint, lang='en', **request.view_args) }}">EN</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for(request.endpoint, lang='es', **request.view_args) }}">ES</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+
+    <section class="content">
+        <div class="container my-4">
+            {% block content %}{% endblock %}
+        </div>
+        
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

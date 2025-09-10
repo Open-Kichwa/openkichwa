@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1> Signup - Open Kichwa </h1>
+<h1>{{ gettext("test") }}</h1>
+
+<div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card shadow-lg rounded-4">
+                    <div class="card-body p-4">
+                        <h3 class="text-center mb-4">Sign Up</h3>
+                        <form method="POST" action="/signup">
+                            <!-- Name -->
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            
+                            <!-- Password -->
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+            
+                            <!-- Repeat Password -->
+                            <div class="mb-3">
+                                <label for="confirm_password" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+                            </div>
+                            
+                            <!-- Email -->
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+
+                            <!-- Gender Dropdown -->
+                            <div class="mb-3">
+                                <label for="gender" class="form-label">Gender</label>
+                                <select class="form-select" id="gender" name="gender" required>
+                                    <option selected disabled>Choose...</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <!-- Access Code -->
+                            <div class="mb-3">
+                                <label for="access_code" class="form-label">Access Code</label>
+                                <input type="text" class="form-control" id="access_code" name="access_code" required>
+                            </div>
+
+
+                            <!-- Submit Button -->
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-dark">Create Account</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

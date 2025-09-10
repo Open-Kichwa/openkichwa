@@ -32,13 +32,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link {% if request.endpoint == 'about' %}active{% endif %}" href="{{ url_for('index.about') }}">{{ gettext("About") }}</a>
+                        <a class="nav-link {% if request.endpoint == 'about' %}active{% endif %}" href="{{ url_for('index_bp.about') }}">{{ gettext("About") }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.endpoint == 'contribute' %}active{% endif %}" href="{{ url_for('index.contribute') }}">{{ gettext("contribute") }}</a>
+                        <a class="nav-link {% if request.endpoint == 'contribute' %}active{% endif %}" href="{{ url_for('index_bp.contribute') }}">{{ gettext("contribute") }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.endpoint == 'roadmap' %}active{% endif %}" href="{{ url_for('index.roadmap') }}">{{ gettext("roadmap") }}</a>
+                        <a class="nav-link {% if request.endpoint == 'roadmap' %}active{% endif %}" href="{{ url_for('index_bp.roadmap') }}">{{ gettext("roadmap") }}</a>
                     </li>
                 </ul>
 

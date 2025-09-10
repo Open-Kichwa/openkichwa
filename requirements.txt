@@ -1,2 +1,8 @@
 flask
 flask-babel
+flask-login
+flask-bcrypt
+flask-wtf
+flask-sqlalchemy
+python-decouple
+python-dotenv

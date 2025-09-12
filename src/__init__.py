@@ -10,9 +10,13 @@ app = Flask(__name__)
 app.config.from_object(config("APP_SETTINGS"))
 
 db = SQLAlchemy(app)
+# db.init_app(app)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager()
-login_manager.init_app(app) # Continue from user_loader
+login_manager.init_app(app) 
+login_manager.login_view = "user_bp.login"
+login_manager.login_message_category = "danger"
+
 babel.init_app(app, locale_selector=get_locale)
 
 app.config['TEMPLATES_AUTO_RELOAD'] = True
@@ -20,5 +24,31 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 from . import index
 app.register_blueprint(index.bp)
 
-from .user import user
-app.register_blueprint(user.bp)
+from .user import views
+app.register_blueprint(views.bp)
+
+from .user.models import User
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.filter(User.id == int(user_id)).first()
+
+
+
+with app.app_context():
+
+    from .user import models
+
+    if app.config.get("TESTING") or app.config.get("DEBUG") or app.config.get("DEVELOPMENT"):
+        db.create_all() 
+
+@app.cli.command("drop-db")
+def drop_db():
+    """Drop all DB tables."""
+    confirm = input("Drop all tables? Type 'yes' to confirm: ")
+    if confirm == "yes":
+        with app.app_context():
+            db.drop_all()
+        print("Dropped")
+    else:
+        print("Aborted")

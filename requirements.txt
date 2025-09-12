@@ -6,3 +6,4 @@ flask-wtf
 flask-sqlalchemy
 python-decouple
 python-dotenv
+email_validator

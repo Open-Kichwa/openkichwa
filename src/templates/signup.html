@@ -5,64 +5,53 @@
 <h1> Signup - Open Kichwa </h1>
 <h1>{{ gettext("test") }}</h1>
 
-<div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6 col-lg-5">
-                <div class="card shadow-lg rounded-4">
-                    <div class="card-body p-4">
-                        <h3 class="text-center mb-4">Sign Up</h3>
-                        <form method="POST" action="/signup">
-                            <!-- Name -->
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Full Name</label>
-                                <input type="text" class="form-control" id="name" name="name" required>
-                            </div>
-                            
-                            <!-- Password -->
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" name="password" required>
-                            </div>
-            
-                            <!-- Repeat Password -->
-                            <div class="mb-3">
-                                <label for="confirm_password" class="form-label">Confirm Password</label>
-                                <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
-                            </div>
-                            
-                            <!-- Email -->
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email Address</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
-                            </div>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <main class="form-signin w-100 m-auto">
+      <form role="form" method="post" action="">
+        {{ form.csrf_token }}
+        <h1 class="h3 mb-3 fw-normal text-center">Please register</h1>
 
-                            <!-- Gender Dropdown -->
-                            <div class="mb-3">
-                                <label for="gender" class="form-label">Gender</label>
-                                <select class="form-select" id="gender" name="gender" required>
-                                    <option selected disabled>Choose...</option>
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-
-                            <!-- Access Code -->
-                            <div class="mb-3">
-                                <label for="access_code" class="form-label">Access Code</label>
-                                <input type="text" class="form-control" id="access_code" name="access_code" required>
-                            </div>
-
-
-                            <!-- Submit Button -->
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-dark">Create Account</button>
-                            </div>
-                        </form>
-                    </div>
+        <div class="form-floating">
+          {{ form.email(placeholder="email", class="form-control mb-2") }}
+          {{ form.email.label }}
+            {% if form.email.errors %}
+              {% for error in form.email.errors %}
+                <div class="alert alert-danger" role="alert">
+                  {{ error }}
                 </div>
-            </div>
+              {% endfor %}
+            {% endif %}
         </div>
-    </div>
+        <div class="form-floating">
+          {{ form.password(placeholder="password", class="form-control mb-2") }}
+          {{ form.password.label }}
+            {% if form.password.errors %}
+              {% for error in form.password.errors %}
+                <div class="alert alert-danger" role="alert">
+                  {{ error }}
+                </div>
+              {% endfor %}
+            {% endif %}
+        </div>
+        <div class="form-floating">
+          {{ form.confirm(placeholder="Confirm Password", class="form-control mb-2") }}
+          {{ form.confirm.label }}
+            {% if form.confirm.errors %}
+              {% for error in form.confirm.errors %}
+                <div class="alert alert-danger" role="alert">
+                  {{ error }}
+                </div>
+              {% endfor %}
+            {% endif %}
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+        <p class="text-center mt-3">Already registered? <a href="{{ url_for('user_bp.login') }}">Login now</a></p>
+      </form>
+    </main>
+  </div>
+  <div class="col-md-4"></div>
+</div>
 
 {% endblock %}

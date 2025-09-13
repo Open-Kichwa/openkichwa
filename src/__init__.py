@@ -55,3 +55,30 @@ def drop_db():
         print("Dropped")
     else:
         print("Aborted")
+
+import click
+
+@app.cli.command("create-beta")
+@click.option("--created-for", default=None, help="Optional description of who this code is for")
+def create_one_code(created_for):
+    from .user.models import AccessCode, AccessCodeTypes
+    
+
+    while True:
+        if created_for:
+            code = AccessCode(
+                ctype=AccessCodeTypes.BETA,
+                created_for=created_for
+            )
+        else:
+            code = AccessCode(
+                ctype=AccessCodeTypes.BETA,
+            )
+        code_str = code.code
+        existing = AccessCode.query.filter_by(code=code_str).first()
+        if not existing:
+            break
+
+    db.session.add(code)
+    db.session.commit()
+    click.echo(f"Generated BETA access code: {code.code}")

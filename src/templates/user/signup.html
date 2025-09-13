@@ -64,6 +64,17 @@
               {% endfor %}
             {% endif %}
         </div>
+        <div class="form-floating">
+          {{ form.community(placeholder=gettext("Community"), class="form-control mb-2") }}
+          {{ form.community.label }}
+            {% if form.community.errors %}
+              {% for error in form.community.errors %}
+                <div class="alert alert-danger" role="alert">
+                  {{ error }}
+                </div>
+              {% endfor %}
+            {% endif %}
+        </div>
         <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
         <p class="text-center mt-3">Already registered? <a href="{{ url_for('user_bp.login') }}">Login now</a></p>
       </form>

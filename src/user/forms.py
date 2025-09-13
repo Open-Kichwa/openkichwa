@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import EmailField, PasswordField, StringField
+from wtforms import EmailField, PasswordField, StringField, SelectField
 from wtforms.validators import DataRequired, Email, EqualTo, Length
 from flask_babel import gettext, lazy_gettext
 from sqlalchemy import func
@@ -23,6 +23,26 @@ class RegisterForm(FlaskForm):
     )
     beta_code = StringField(lazy_gettext("Beta code"), validators=[DataRequired()])
     username = StringField(lazy_gettext("Username"), validators=[DataRequired()])
+    community = SelectField(lazy_gettext("Community"), validators=[DataRequired()],
+                            choices=
+                            [
+                                ("Cañari", "Cañari"),
+                                ("Caranqui", "Caranqui"),
+                                ("Cayambi", "Cayambi"),
+                                ("Chibuleo", "Chibuleo"),
+                                ("Guaranga", "Guaranga"),
+                                ("Natabuela", "Natabuela"),
+                                ("Otavalo", "Otavalo"),
+                                ("Panzaleo", "Panzaleo"),
+                                ("Puruhá", "Puruhá"),
+                                ("Quisapincha", "Quisapincha"),
+                                ("Salasaca", "Salasaca"),
+                                ("Saraguro", "Saraguro"),
+                                ("Tomabela", "Tomabela"),
+                                ("Quichuas del Napo", "Quichuas del Napo"),
+                                ("Quichuas de Pastaza", "Quichuas de Pastaza")
+                            ]
+                            )
 
     def validate(self, extra_validators=None):
         initial_validation = super(RegisterForm, self).validate()

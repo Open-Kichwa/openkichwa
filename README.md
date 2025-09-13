@@ -30,4 +30,4 @@
 
 ## Backlog
 - [ ] Create test for Signup and Login
-- [ ] Create permanent position for Flash
+- [x] Create permanent position for Flash

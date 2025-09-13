@@ -1,10 +1,11 @@
 from flask import (Blueprint, render_template, request, session, url_for, make_response, flash, redirect)
 from flask_login import login_required, login_user, current_user, logout_user
+from flask_babel import gettext
 
 from .forms import RegisterForm, LoginForm
 from .models import User
 
-from .. import db, bcrypt
+from .. import db, bcrypt, babel
 
 bp = Blueprint("user_bp", __name__)
 
@@ -15,21 +16,27 @@ def logout():
     flash("You were logged out.", "success")
     return redirect(url_for("user_bp.login"))
 
+
 @bp.route("/login", methods=["GET", "POST"])
 def login():
-     if current_user.is_authenticated:
-        flash("You are already logged in.", "info")
-        return redirect(url_for("index_bp.index"))
-     form = LoginForm(request.form)
-     if form.validate_on_submit():
-          user = User.query.filter_by(email=form.email.data).first()
-          if user and bcrypt.check_password_hash(user.password, request.form["password"]):
-               login_user(user)
+     if request.method == "POST":
+          if current_user.is_authenticated:
+               flash(gettext("You are already logged in"), "info")
                return redirect(url_for("index_bp.index"))
-          else:
-               flash("Invalid email and/or password.", "danger")
-               return render_template("login.html", form=form)
-     return render_template("login.html", form=form)
+          
+          form = LoginForm(request.form)
+          if form.validate_on_submit():
+               user = User.query.filter_by(email=form.email.data).first()
+               if user and bcrypt.check_password_hash(user.password, request.form["password"]):
+                    login_user(user)
+                    return redirect(url_for("index_bp.index"))
+               else:
+                    flash(gettext("Invalid email and/or password"), "danger")
+                    return render_template("user/login.html", form=form)
+          return render_template("user/login.html", form=form)
+     else:
+          form = LoginForm()
+          return render_template("user/login.html", form=form)
 
 @bp.route("/signup", methods=["GET", "POST"])
 def signup():
@@ -47,12 +54,12 @@ def signup():
 
           return redirect(url_for("user_bp.profile"))
      
-     return render_template("signup.html", form=form)
+     return render_template("user/signup.html", form=form)
 
      # if request.method == "POST":
      #      pass
      # else:
-     #      return render_template("signup.html")
+     #      return render_template("user/signup.html")
      
 @bp.route("/profile")
 @login_required

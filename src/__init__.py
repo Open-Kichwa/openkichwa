@@ -18,6 +18,9 @@ login_manager.login_view = "user_bp.login"
 login_manager.login_message_category = "danger"
 
 babel.init_app(app, locale_selector=get_locale)
+@app.context_processor
+def inject_get_locale():
+    return dict(get_locale=get_locale)
 
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 

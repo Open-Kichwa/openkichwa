@@ -15,28 +15,20 @@
 </head>
 
 <body>
-
-    {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-      <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-          {% for category, message in messages %}
-          <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
-           {{message}}
-           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
-          {% endfor %}
+    
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <img class="responsive-logo"
+                src="{{ url_for('static', filename='images/text over logo no bg.png') }}"
+                alt="Logo">
         </div>
-        <div class="col-md-4"></div>
-      </div>
-      {% endif %}
-    {% endwith %}
 
-    <div>
-        <img class="responsive-logo" src="{{ url_for('static', filename='images/text over logo no bg.png') }}" alt="Logo">
+        {% if get_locale() == 'es' %}
+        <div class="text-muted small fst-italic me-2">
+            *Esta traducción fue generada automáticamente
+        </div>
+        {% endif %}
     </div>
-
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
         <div class="container-fluid">
@@ -77,7 +69,7 @@
                 <div class="lang-selector d-lg-none w-100 mt-3 d-flex justify-content-end">
                     <div class="dropdown">
                     <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                        {{ 'EN' if lang == 'en' else 'ES' }}
+                        {{ 'EN' if get_locale() == 'en' else 'ES' }}
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="{{ url_for(request.endpoint, lang='en', **request.view_args) }}">EN</a></li>
@@ -89,7 +81,7 @@
                 <!-- DESKTOP Language Selector -->
                 <div class="dropdown d-none d-lg-block ms-auto">
                     <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                        {{ 'ES' if lang == 'es' else 'EN' }}
+                        {{ 'ES' if get_locale() == 'es' else 'EN' }}
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="{{ url_for(request.endpoint, lang='en', **request.view_args) }}">EN</a></li>
@@ -99,11 +91,22 @@
             </div>
         </div>
     </nav>
-
-
-    {% for message in get_flashed_messages() %}
-        <div class="flash">{{ message }}</div>
-    {% endfor %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          {% for category, message in messages %}
+          <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+           {{message}}
+           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      {% endif %}
+    {% endwith %}
 
 
     <section class="content">

@@ -26,3 +26,8 @@
 - [ ] Add cookies information
 - [ ] progress bar
 - [ ] robots.txt
+
+
+## Backlog
+- [ ] Create test for Signup and Login
+- [ ] Create permanent position for Flash

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-07-12 19:17+0200\n"
+"POT-Creation-Date: 2025-09-13 18:48+0200\n"
 "PO-Revision-Date: 2025-07-12 19:18+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -18,11 +18,80 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: templates/base.html:32
-msgid "Home Button"
-msgstr "Inicio"
+#: templates/about.html:6 templates/contribute.html:6 templates/index.html:6
+#: templates/roadmap.html:6 templates/user/login.html:6
+msgid "test"
+msgstr "test_es"
 
-#: templates/base.html:35
+#: templates/common/base.html:44
+msgid "Home Button"
+msgstr "Home"
+
+#: templates/common/base.html:52
 msgid "About"
 msgstr "Sobre nosotros"
+
+#: templates/common/base.html:55
+msgid "contribute"
+msgstr "Contribuir"
+
+#: templates/common/base.html:58
+msgid "roadmap"
+msgstr "Roadmap"
+
+#: templates/user/signup.html:11
+msgid "Please register"
+msgstr "Regístrate"
+
+#: templates/user/signup.html:13 user/forms.py:25
+msgid "Username"
+msgstr "Nombre de usuario"
+
+#: templates/user/signup.html:24 user/forms.py:12 user/forms.py:53
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: templates/user/signup.html:35 user/forms.py:9 user/forms.py:54
+msgid "Password"
+msgstr "Contraseña"
+
+#: templates/user/signup.html:46 user/forms.py:18
+msgid "Repeat Password"
+msgstr "Repite la contraseña"
+
+#: templates/user/signup.html:57 user/forms.py:24
+msgid "Beta code"
+msgstr "Código beta"
+
+#: user/forms.py:21
+msgid "Password must match"
+msgstr "La contraseña debe coincidir"
+
+#: user/forms.py:34
+msgid "Email has already been registered"
+msgstr "Este correo electrónico ya está registrado"
+
+#: user/forms.py:37
+msgid "Passwords must match"
+msgstr "Las contraseñas deben coincidir"
+
+#: user/forms.py:41
+msgid "Invalid code, please check spelling"
+msgstr "Código inválido, por favor revisa la escritura"
+
+#: user/forms.py:45
+msgid "Code has already been claimed"
+msgstr "Este código ya ha sido utilizado"
+
+#: user/forms.py:48
+msgid "Wrong type of code"
+msgstr "Tipo de código incorrecto"
+
+#: user/views.py:24
+msgid "You are already logged in"
+msgstr "Ya has iniciado sesión"
+
+#: user/views.py:34
+msgid "Invalid email and/or password"
+msgstr "Correo electrónico y/o contraseña inválidos"
 

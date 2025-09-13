@@ -2,7 +2,373 @@
 
 
 {% block content %}
-<h1> Roadmap - Open Kichwa </h1>
-<h1>{{ gettext("test") }}</h1>
-<h1>test</h1>
+
+<style>
+        
+
+        .roadmap-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            position: relative;
+        }
+
+        .roadmap-timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .roadmap-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #007bff, #6610f2, #e83e8c);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .roadmap-item {
+            position: relative;
+            margin-bottom: 4rem;
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .roadmap-item.animate-left {
+            transform: translateX(-100px);
+        }
+
+        .roadmap-item.animate-right {
+            transform: translateX(100px);
+        }
+
+        .roadmap-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .roadmap-content {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e9ecef;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .roadmap-content:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .roadmap-item.left .roadmap-content {
+            margin-right: auto;
+            margin-left: 0;
+            width: calc(50% - 2rem);
+        }
+
+        .roadmap-item.right .roadmap-content {
+            margin-left: auto;
+            margin-right: 0;
+            width: calc(50% - 2rem);
+        }
+
+        .roadmap-item.left .roadmap-content::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 10px solid white;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            filter: drop-shadow(2px 0 2px rgba(0, 0, 0, 0.1));
+        }
+
+        .roadmap-item.right .roadmap-content::after {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-right: 10px solid white;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            filter: drop-shadow(-2px 0 2px rgba(0, 0, 0, 0.1));
+        }
+
+        .roadmap-dot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 16px;
+            height: 16px;
+            background: white;
+            border: 3px solid #007bff;
+            border-radius: 50%;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .roadmap-item:hover .roadmap-dot {
+            width: 20px;
+            height: 20px;
+            border-width: 4px;
+            border-color: #6610f2;
+        }
+
+        .roadmap-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .roadmap-description {
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .roadmap-date {
+            display: inline-block;
+            background: linear-gradient(135deg, #007bff, #6610f2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            color: #6c757d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .roadmap-timeline::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            /* Override desktop positioning - center everything on mobile */
+            .roadmap-item.left .roadmap-content,
+            .roadmap-item.right .roadmap-content {
+                width: calc(100% - 2rem) !important;
+                margin-left: 1rem !important;
+                margin-right: 1rem !important;
+            }
+
+            .roadmap-item.left .roadmap-content::after,
+            .roadmap-item.right .roadmap-content::after {
+                display: none;
+            }
+
+            .roadmap-dot {
+                display: none;
+            }
+
+            /* Mobile animation - start positions off-screen but detectable */
+            .roadmap-item.left.animate-left {
+                transform: translateX(-150px);
+            }
+
+            .roadmap-item.right.animate-right {
+                transform: translateX(150px);
+            }
+
+            /* Mobile animation - end position centered */
+            .roadmap-item.left.visible,
+            .roadmap-item.right.visible {
+                transform: translateX(0) !important;
+            }
+
+            .roadmap-item.animate-left,
+            .roadmap-item.animate-right {
+                transform: translateX(-50px);
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .roadmap-content {
+                padding: 1.5rem;
+            }
+
+            .roadmap-title {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .roadmap-container {
+                padding: 1rem 0.5rem;
+            }
+
+            .roadmap-content {
+                padding: 1.25rem;
+            }
+
+            .roadmap-title {
+                font-size: 1.2rem;
+            }
+
+            .roadmap-description {
+                font-size: 0.95rem;
+            }
+
+            .page-header h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="roadmap-container">
+        <div class="page-header">
+            <h1>Our Roadmap</h1>
+            <p>Follow our journey as we build amazing features and reach important milestones</p>
+        </div>
+
+        <div class="roadmap-timeline">
+            <div class="roadmap-item left animate-left">
+                <div class="roadmap-content">
+                    <h3 class="roadmap-title">Project Kickoff</h3>
+                    <p class="roadmap-description">
+                        We launched our project with a clear vision and assembled our core team. 
+                        Initial planning and architecture decisions were made to set a solid foundation.
+                    </p>
+                    <div class="roadmap-date">Q1 2024</div>
+                </div>
+                <div class="roadmap-dot"></div>
+            </div>
+
+            <div class="roadmap-item right animate-right">
+                <div class="roadmap-content">
+                    <h3 class="roadmap-title">MVP Development</h3>
+                    <p class="roadmap-description">
+                        Core features were developed and tested. We focused on creating a minimum viable 
+                        product that delivers real value to our early adopters.
+                    </p>
+                    <div class="roadmap-date">Q2 2024</div>
+                </div>
+                <div class="roadmap-dot"></div>
+            </div>
+
+            <div class="roadmap-item left animate-left">
+                <div class="roadmap-content">
+                    <h3 class="roadmap-title">Beta Launch</h3>
+                    <p class="roadmap-description">
+                        Successfully launched our beta version to a select group of users. 
+                        Gathered valuable feedback and identified areas for improvement.
+                    </p>
+                    <div class="roadmap-date">Q3 2024</div>
+                </div>
+                <div class="roadmap-dot"></div>
+            </div>
+
+            <div class="roadmap-item right animate-right">
+                <div class="roadmap-content">
+                    <h3 class="roadmap-title">Public Release</h3>
+                    <p class="roadmap-description">
+                        Official launch to the public with enhanced features, improved performance, 
+                        and a polished user experience based on beta feedback.
+                    </p>
+                    <div class="roadmap-date">Q4 2024</div>
+                </div>
+                <div class="roadmap-dot"></div>
+            </div>
+
+            <div class="roadmap-item left animate-left">
+                <div class="roadmap-content">
+                    <h3 class="roadmap-title">Mobile App</h3>
+                    <p class="roadmap-description">
+                        Developing native mobile applications for iOS and Android to provide 
+                        our users with seamless access on all their devices.
+                    </p>
+                    <div class="roadmap-date">Q1 2025</div>
+                </div>
+                <div class="roadmap-dot"></div>
+            </div>
+
+            <div class="roadmap-item right animate-right">
+                <div class="roadmap-content">
+                    <h3 class="roadmap-title">Advanced Features</h3>
+                    <p class="roadmap-description">
+                        Rolling out advanced analytics, AI-powered insights, and enterprise-grade 
+                        features to serve our growing user base better.
+                    </p>
+                    <div class="roadmap-date">Q2 2025</div>
+                </div>
+                <div class="roadmap-dot"></div>
+            </div>
+
+            <div class="roadmap-item left animate-left">
+                <div class="roadmap-content">
+                    <h3 class="roadmap-title">Global Expansion</h3>
+                    <p class="roadmap-description">
+                        Expanding our reach globally with multi-language support, regional 
+                        compliance, and partnerships with international organizations.
+                    </p>
+                    <div class="roadmap-date">Q3 2025</div>
+                </div>
+                <div class="roadmap-dot"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all roadmap items
+        document.addEventListener('DOMContentLoaded', () => {
+            const roadmapItems = document.querySelectorAll('.roadmap-item');
+            roadmapItems.forEach(item => {
+                observer.observe(item);
+            });
+        });
+
+        // Add smooth scroll behavior for better UX
+        document.documentElement.style.scrollBehavior = 'smooth';
+    </script>
+
 {% endblock %}

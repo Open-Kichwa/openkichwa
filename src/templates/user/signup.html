@@ -76,7 +76,7 @@
             {% endif %}
         </div>
         <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
-        <p class="text-center mt-3">Already registered? <a href="{{ url_for('user_bp.login') }}">Login now</a></p>
+        <p class="text-center mt-3">{{ gettext("Already registered?") }}<a href="{{ url_for('user_bp.login') }}">{{ gettext("Login now") }}</a></p>
       </form>
     </main>
   </div>

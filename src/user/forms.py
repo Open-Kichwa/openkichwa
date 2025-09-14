@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import EmailField, PasswordField, StringField, SelectField
+from wtforms import EmailField, PasswordField, StringField, SelectField, BooleanField
 from wtforms.validators import DataRequired, Email, EqualTo, Length
 from flask_babel import gettext, lazy_gettext
 from sqlalchemy import func
@@ -21,6 +21,7 @@ class RegisterForm(FlaskForm):
             EqualTo('password', message=lazy_gettext("Password must match")),
         ],
     )
+    terms = BooleanField(lazy_gettext("Terms"), validators=[DataRequired()])
     beta_code = StringField(lazy_gettext("Beta code"), validators=[DataRequired()])
     username = StringField(lazy_gettext("Username"), validators=[DataRequired()])
     community = SelectField(lazy_gettext("Community"), validators=[DataRequired()],
@@ -55,6 +56,9 @@ class RegisterForm(FlaskForm):
             result = False
         if self.password.data != self.confirm.data:
             self.password.errors.append(lazy_gettext("Passwords must match"))
+            result = False
+        if not self.terms.data:
+            self.terms.errors.append(lazy_gettext("You need to agree to our terms and conditions"))
             result = False
         acode: AccessCode = AccessCode.query.filter_by(code=self.beta_code.data.upper()).first()
         if not acode:

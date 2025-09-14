@@ -10,7 +10,6 @@ app = Flask(__name__)
 app.config.from_object(config("APP_SETTINGS"))
 
 db = SQLAlchemy(app)
-# db.init_app(app)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager()
 login_manager.init_app(app) 
@@ -27,8 +26,11 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 from . import index
 app.register_blueprint(index.bp)
 
-from .user import views
-app.register_blueprint(views.bp)
+from .legal.views import bp as legal_bp
+app.register_blueprint(legal_bp)
+
+from .user.views import bp as user_bp
+app.register_blueprint(user_bp)
 
 from .user.models import User
 

@@ -33,11 +33,11 @@ msgstr "About"
 
 #: templates/common/base.html:55
 msgid "contribute"
-msgstr "contribute"
+msgstr "Contribute"
 
 #: templates/common/base.html:58
 msgid "roadmap"
-msgstr "roadmap"
+msgstr "Roadmap"
 
 #: templates/user/signup.html:11
 msgid "Please register"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-09-13 18:48+0200\n"
+"POT-Creation-Date: 2025-09-16 00:18+0200\n"
 "PO-Revision-Date: 2025-07-12 19:18+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -18,80 +18,485 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: templates/about.html:6 templates/contribute.html:6 templates/index.html:6
-#: templates/roadmap.html:6 templates/user/login.html:6
-msgid "test"
-msgstr "test_es"
+#: templates/about.html:56
+msgid "About Open Kichwa / Kichwa Paskana"
+msgstr ""
 
-#: templates/common/base.html:44
-msgid "Home Button"
-msgstr "Home"
+#: templates/about.html:58
+msgid "About Header subtitle"
+msgstr ""
 
-#: templates/common/base.html:52
+#: templates/about.html:72
+msgid "What Is Open Kichwa"
+msgstr ""
+
+#: templates/about.html:76
+msgid "About what 1"
+msgstr ""
+
+#: templates/about.html:81
+msgid "About what 2"
+msgstr ""
+
+#: templates/about.html:91
+msgid "Why this project started"
+msgstr ""
+
+#: templates/about.html:95
+#, fuzzy
+msgid "About Why 1"
+msgstr "Sobre nosotros"
+
+#: templates/about.html:100
+#, fuzzy
+msgid "About Why 2"
+msgstr "Sobre nosotros"
+
+#: templates/about.html:109 templates/index.html:101
+msgid "Our Goals"
+msgstr ""
+
+#: templates/about.html:113
+msgid "About Goals List"
+msgstr ""
+
+#: templates/about.html:121
+msgid "About Goal 1"
+msgstr ""
+
+#: templates/about.html:130
+msgid "How the platform works"
+msgstr ""
+
+#: templates/about.html:133
+#, fuzzy
+msgid "About how 1"
+msgstr "Sobre nosotros"
+
+#: templates/about.html:140
+#, fuzzy
+msgid "About How 2"
+msgstr "Sobre nosotros"
+
+#: templates/about.html:150
+msgid "Who benefits"
+msgstr ""
+
+#: templates/about.html:154
+#, fuzzy
+msgid "About who 1"
+msgstr "Sobre nosotros"
+
+#: templates/about.html:159
+#, fuzzy
+msgid "About who 2"
+msgstr "Sobre nosotros"
+
+#: templates/about.html:168
+msgid "Who started OKKP"
+msgstr ""
+
+#: templates/about.html:172
+msgid "About founder 1"
+msgstr ""
+
+#: templates/about.html:177
+msgid "About founder 2"
+msgstr ""
+
+#: templates/about.html:191
+msgid "About call 1"
+msgstr ""
+
+#: templates/about.html:194 templates/contribute.html:34
+msgid "Create an account"
+msgstr ""
+
+#: templates/about.html:198
+msgid "About call 2"
+msgstr ""
+
+#: templates/contribute.html:10
+msgid "Do you want to contribute?"
+msgstr ""
+
+#: templates/contribute.html:12
+msgid "Contribute Headline text"
+msgstr ""
+
+#: templates/contribute.html:30
+msgid "Speak Kichwa and you are from Ecuador?"
+msgstr ""
+
+#: templates/contribute.html:36
+#, fuzzy
+msgid "Contribute Speak Kichwa"
+msgstr "Contribuir"
+
+#: templates/contribute.html:57
+msgid "Programmer, Designer, or Skilled Contributor?"
+msgstr ""
+
+#: templates/contribute.html:58
+#, fuzzy
+msgid "Contribute Programmer"
+msgstr "Contribuir"
+
+#: templates/contribute.html:87
+msgid "Found a bug or have suggestions?"
+msgstr ""
+
+#: templates/contribute.html:89
+msgid "Contribute Problems Bugs"
+msgstr ""
+
+#: templates/index.html:10
+msgid "Search"
+msgstr ""
+
+#: templates/index.html:13
+msgid "Searching has not been implemented yet"
+msgstr ""
+
+#: templates/index.html:22
+msgid "An open, collaborative dictionary of Ecuadorian Kichwa"
+msgstr ""
+
+#: templates/index.html:24
+msgid "Learn More"
+msgstr ""
+
+#: templates/index.html:25
+#, fuzzy
+msgid "Contribute"
+msgstr "Contribuir"
+
+#: templates/index.html:33
+msgid "What is Open Kichwa?"
+msgstr ""
+
+#: templates/index.html:35
+#, fuzzy
+msgid "Index About"
+msgstr "Sobre nosotros"
+
+#: templates/index.html:39
+msgid "Read More"
+msgstr ""
+
+#: templates/index.html:46
+msgid "Featured Words"
+msgstr ""
+
+#: templates/index.html:47
+msgid "Kichwa, one word at a time"
+msgstr ""
+
+#: templates/index.html:80
+#, fuzzy
+msgid "How You Can Contribute"
+msgstr "Contribuir"
+
+#: templates/index.html:83
+msgid "1. Create an Account"
+msgstr ""
+
+#: templates/index.html:84
+msgid "Join the community and share your knowledge."
+msgstr ""
+
+#: templates/index.html:87
+msgid "2. Add Words"
+msgstr ""
+
+#: templates/index.html:88
+msgid "Submit your community’s versions and pronunciations."
+msgstr ""
+
+#: templates/index.html:91
+msgid "3. Vote & Collaborate"
+msgstr ""
+
+#: templates/index.html:92
+msgid "Support others’ contributions and grow together."
+msgstr ""
+
+#: templates/index.html:106
+msgid "Dictionary"
+msgstr ""
+
+#: templates/index.html:107
+msgid "Build a large, easy-to-use Kichwa dictionary."
+msgstr ""
+
+#: templates/index.html:114
+msgid "Datasets"
+msgstr ""
+
+#: templates/index.html:115
+msgid "Create and release open linguistic datasets."
+msgstr ""
+
+#: templates/index.html:122
+msgid "Access"
+msgstr ""
+
+#: templates/index.html:123
+msgid "Democratize language resources for all."
+msgstr ""
+
+#: templates/index.html:130
+msgid "Empowerment"
+msgstr ""
+
+#: templates/index.html:131
+msgid "Support communities to preserve their language."
+msgstr ""
+
+#: templates/roadmap.html:256
+#, fuzzy
+msgid "Our Roadmap"
+msgstr "Roadmap"
+
+#: templates/roadmap.html:262
+msgid "First Version Public"
+msgstr ""
+
+#: templates/roadmap.html:264
+#, fuzzy
+msgid "Roadmap 1"
+msgstr "Roadmap"
+
+#: templates/roadmap.html:267
+msgid "September"
+msgstr ""
+
+#: templates/roadmap.html:274
+#, fuzzy
+msgid "Beta Test"
+msgstr "Código beta"
+
+#: templates/roadmap.html:276
+#, fuzzy
+msgid "Roadmap 2"
+msgstr "Roadmap"
+
+#: templates/roadmap.html:280
+msgid "October"
+msgstr ""
+
+#: templates/roadmap.html:280 templates/roadmap.html:292
+msgid "November"
+msgstr ""
+
+#: templates/roadmap.html:287
+msgid "First Results from the Beta"
+msgstr ""
+
+#: templates/roadmap.html:289
+#, fuzzy
+msgid "Roadmap 3"
+msgstr "Roadmap"
+
+#: templates/roadmap.html:299
+msgid "Improved Dictionary Search Algorithm"
+msgstr ""
+
+#: templates/roadmap.html:301
+#, fuzzy
+msgid "Roadmap 4"
+msgstr "Roadmap"
+
+#: templates/roadmap.html:311
+msgid "Public Release"
+msgstr ""
+
+#: templates/roadmap.html:313
+#, fuzzy
+msgid "Roadmap 5"
+msgstr "Roadmap"
+
+#: templates/roadmap.html:324
+msgid "Verb Conjungator"
+msgstr ""
+
+#: templates/roadmap.html:326
+#, fuzzy
+msgid "Roadmap 6"
+msgstr "Roadmap"
+
+#: templates/roadmap.html:336
+msgid "Publication of The First Full Dataset"
+msgstr ""
+
+#: templates/roadmap.html:338
+#, fuzzy
+msgid "Roadmap 7"
+msgstr "Roadmap"
+
+#: templates/roadmap.html:347
+msgid "Future Features"
+msgstr ""
+
+#: templates/roadmap.html:349
+#, fuzzy
+msgid "Roadmap 8"
+msgstr "Roadmap"
+
+#: templates/common/base.html:49
 msgid "About"
 msgstr "Sobre nosotros"
 
-#: templates/common/base.html:55
+#: templates/common/base.html:52
 msgid "contribute"
 msgstr "Contribuir"
 
-#: templates/common/base.html:58
+#: templates/common/base.html:55
 msgid "roadmap"
 msgstr "Roadmap"
+
+#: templates/common/base.html:63
+msgid "Logout"
+msgstr ""
+
+#: templates/common/base.html:68
+msgid "Login"
+msgstr ""
+
+#: templates/common/base.html:72
+msgid "Sign up"
+msgstr ""
+
+#: templates/common/base.html:132 templates/user/signup.html:105
+#, fuzzy
+msgid "Terms"
+msgstr "test_es"
+
+#: templates/common/base.html:138 templates/legal/imprint.html:5
+msgid "Imprint"
+msgstr ""
+
+#: templates/common/base.html:144
+msgid "Contact us"
+msgstr ""
+
+#: templates/common/base.html:150
+msgid "Instagram"
+msgstr ""
+
+#: templates/legal/terms.html:51
+msgid "This page is only available in <strong>English</strong>"
+msgstr ""
+
+#: templates/user/login.html:11
+#, fuzzy
+msgid "Please sign in"
+msgstr "Regístrate"
+
+#: templates/user/login.html:35
+msgid "Sign in"
+msgstr ""
+
+#: templates/user/login.html:36
+msgid "New User?"
+msgstr ""
+
+#: templates/user/login.html:36
+msgid "Register now"
+msgstr ""
 
 #: templates/user/signup.html:11
 msgid "Please register"
 msgstr "Regístrate"
 
-#: templates/user/signup.html:13 user/forms.py:25
+#: templates/user/signup.html:13
 msgid "Username"
 msgstr "Nombre de usuario"
 
-#: templates/user/signup.html:24 user/forms.py:12 user/forms.py:53
+#: templates/user/signup.html:19
+#, fuzzy
+msgid "Username tooltip"
+msgstr "Nombre de usuario"
+
+#: templates/user/signup.html:32
 msgid "Email"
 msgstr "Correo electrónico"
 
-#: templates/user/signup.html:35 user/forms.py:9 user/forms.py:54
+#: templates/user/signup.html:38
+msgid "Email tooltip"
+msgstr ""
+
+#: templates/user/signup.html:51
 msgid "Password"
 msgstr "Contraseña"
 
-#: templates/user/signup.html:46 user/forms.py:18
+#: templates/user/signup.html:57
+#, fuzzy
+msgid "Password tooltip"
+msgstr "Contraseña"
+
+#: templates/user/signup.html:70
 msgid "Repeat Password"
 msgstr "Repite la contraseña"
 
-#: templates/user/signup.html:57 user/forms.py:24
+#: templates/user/signup.html:81
 msgid "Beta code"
 msgstr "Código beta"
 
-#: user/forms.py:21
-msgid "Password must match"
-msgstr "La contraseña debe coincidir"
+#: templates/user/signup.html:92
+msgid "Community"
+msgstr ""
 
-#: user/forms.py:34
-msgid "Email has already been registered"
-msgstr "Este correo electrónico ya está registrado"
+#: templates/user/signup.html:104
+msgid "TermsPart1"
+msgstr ""
 
-#: user/forms.py:37
-msgid "Passwords must match"
-msgstr "Las contraseñas deben coincidir"
+#: templates/user/signup.html:106
+msgid "TermsPart2"
+msgstr ""
 
-#: user/forms.py:41
-msgid "Invalid code, please check spelling"
-msgstr "Código inválido, por favor revisa la escritura"
+#: templates/user/signup.html:117
+#, fuzzy
+msgid "Already registered?"
+msgstr "Regístrate"
 
-#: user/forms.py:45
-msgid "Code has already been claimed"
-msgstr "Este código ya ha sido utilizado"
+#: templates/user/signup.html:117
+msgid "Login now"
+msgstr ""
 
-#: user/forms.py:48
-msgid "Wrong type of code"
-msgstr "Tipo de código incorrecto"
-
-#: user/views.py:24
+#: user/views.py:25
 msgid "You are already logged in"
 msgstr "Ya has iniciado sesión"
 
-#: user/views.py:34
+#: user/views.py:35
 msgid "Invalid email and/or password"
 msgstr "Correo electrónico y/o contraseña inválidos"
+
+#: user/views.py:46
+#, fuzzy
+msgid "You are already registered"
+msgstr "Ya has iniciado sesión"
+
+#: user/views.py:62
+#, fuzzy
+msgid "You have been registered!"
+msgstr "Este correo electrónico ya está registrado"
+
+#~ msgid "Home Button"
+#~ msgstr "Home"
+
+#~ msgid "Password must match"
+#~ msgstr "La contraseña debe coincidir"
+
+#~ msgid "Passwords must match"
+#~ msgstr "Las contraseñas deben coincidir"
+
+#~ msgid "Invalid code, please check spelling"
+#~ msgstr "Código inválido, por favor revisa la escritura"
+
+#~ msgid "Code has already been claimed"
+#~ msgstr "Este código ya ha sido utilizado"
+
+#~ msgid "Wrong type of code"
+#~ msgstr "Tipo de código incorrecto"
 

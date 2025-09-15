@@ -124,6 +124,39 @@
         </div>
         
     </section>
+
+    <footer class="footer bg-dark text-light py-2 mt-auto fixed-bottom">
+  <div class="container text-center">
+    <span class="mx-2">
+      <a href="{{ url_for('legal_bp.terms') }}" class="text-light text-decoration-none">
+        {{ gettext("Terms") }}
+      </a>
+    </span>
+    |
+    <span class="mx-2">
+      <a href="{{ url_for('legal_bp.imprint') }}" class="text-light text-decoration-none">
+        {{ gettext("Imprint") }}
+      </a>
+    </span>
+    |
+    <span class="mx-2">
+      <a href="mailto:open.kichwa@proton.me" class="text-light text-decoration-none">
+        {{ gettext("Contact us") }}
+      </a>
+    </span>
+    |
+    <span class="mx-2">
+      <a href="https://www.instagram.com/openkichwa/" target="_blank" class="text-light text-decoration-none">
+        {{ gettext("Instagram") }}
+      </a>
+    </span>
+    |
+    <span class="mx-2">
+      Open Kichwa © 2025
+    </span>
+  </div>
+</footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 </body>
 </html>

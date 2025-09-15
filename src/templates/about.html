@@ -2,7 +2,220 @@
 
 
 {% block content %}
-<h1> About - Open Kichwa </h1>
-<h1>{{ gettext("test") }}</h1>
-<h1>test</h1>
+<style>
+  /* Mobile-first styling */
+  .about-hero {
+    padding: 2.25rem 1rem;
+    text-align: left;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  .hero-text { flex: 1; }
+  .hero-title { font-size: 1.5rem; margin-bottom: .25rem; }
+  .hero-sub { font-size: 0.95rem; color: #555; margin: 0; }
+
+  .section-card {
+    background: #fff;
+    border-radius: .6rem;
+    padding: 1rem;
+    margin: 0.75rem 0;
+    box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+  }
+
+  h2.section-heading { font-size: 1.05rem; margin: 0 0 .5rem 0; display:flex; gap:.5rem; align-items:center; }
+  p.lead-small { margin: 0 0 .6rem 0; color: #444; line-height:1.4; }
+
+  ul.goals { padding-left: 1.1rem; margin: .25rem 0; }
+  ol.plain { padding-left: 1.05rem; margin: .25rem 0 .5rem; }
+
+  .muted { color: #666; font-size: .95rem; }
+
+  /* Fade-in on scroll */
+  .fade-in-section { opacity: 0; transform: translateY(14px); transition: opacity .55s ease-out, transform .55s ease-out; will-change: opacity, transform; }
+  .fade-in-section.is-visible { opacity: 1; transform: none; }
+
+  /* Accessibility & prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    .fade-in-section { transition: none; transform: none; opacity: 1; }
+  }
+
+  /* Slightly larger screens */
+  @media (min-width: 768px) {
+    .hero-title { font-size: 2rem; }
+    .about-hero { padding: 3rem 2rem; }
+    .section-card { padding: 1.25rem; }
+  }
+</style>
+
+<div class="container-fluid px-2 py-3">
+
+  <!-- HERO -->
+  <header class="about-hero fade-in-section" role="banner" aria-labelledby="about-title">
+    <div class="hero-text">
+      <h1 id="about-title" class="hero-title">{{ gettext('About Open Kichwa / Kichwa Paskana') }}</h1>
+      <p class="hero-sub muted">
+        {{ gettext('About Header subtitle') }}
+        
+      </p>
+    </div>
+  </header>
+
+  <!-- What & Purpose -->
+  <section class="section-card fade-in-section" aria-labelledby="what-heading">
+    <h2 id="what-heading" class="section-heading">
+    <!-- License: Apache. Made by vaadin: https://github.com/vaadin/vaadin-icons -->
+    <svg width="20" height="20" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <path fill="#444" d="M9 11h-3c0-3 1.6-4 2.7-4.6 0.4-0.2 0.7-0.4 0.9-0.6 0.5-0.5 0.3-1.2 0.2-1.4-0.3-0.7-1-1.4-2.3-1.4-2.1 0-2.5 1.9-2.5 2.3l-3-0.4c0.2-1.7 1.7-4.9 5.5-4.9 2.3 0 4.3 1.3 5.1 3.2 0.7 1.7 0.4 3.5-0.8 4.7-0.5 0.5-1.1 0.8-1.6 1.1-0.9 0.5-1.2 1-1.2 2z"></path>
+    <path fill="#444" d="M9.5 14c0 1.105-0.895 2-2 2s-2-0.895-2-2c0-1.105 0.895-2 2-2s2 0.895 2 2z"></path>
+    </svg>
+        {{ gettext('What Is Open Kichwa') }}
+      
+    </h2>
+    <p class="lead-small">
+        {{ gettext('About what 1') }}
+      
+    </p>
+    <p class="lead-small">
+        {{ gettext('About what 2') }}
+      
+    </p>
+  </section>
+
+  <!-- Background / Motivation -->
+  <section class="section-card fade-in-section" aria-labelledby="why-heading">
+    <h2 id="why-heading" class="section-heading">
+      <!-- License: Apache. Made by Iconscout: https://github.com/Iconscout/unicons -->
+<svg fill="#000000" width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22,9.67A1,1,0,0,0,21.14,9l-5.69-.83L12.9,3a1,1,0,0,0-1.8,0L8.55,8.16,2.86,9a1,1,0,0,0-.81.68,1,1,0,0,0,.25,1l4.13,4-1,5.68a1,1,0,0,0,.4,1,1,1,0,0,0,1.05.07L12,18.76l5.1,2.68a.93.93,0,0,0,.46.12,1,1,0,0,0,.59-.19,1,1,0,0,0,.4-1l-1-5.68,4.13-4A1,1,0,0,0,22,9.67Zm-6.15,4a1,1,0,0,0-.29.89l.72,4.19-3.76-2a1,1,0,0,0-.94,0l-3.76,2,.72-4.19a1,1,0,0,0-.29-.89l-3-3,4.21-.61a1,1,0,0,0,.76-.55L12,5.7l1.88,3.82a1,1,0,0,0,.76.55l4.21.61Z"/></svg>
+    {{ gettext('Why this project started') }}      
+    </h2>
+
+    <p class="lead-small">
+        {{ gettext('About Why 1') }}
+      
+    </p>
+
+    <p class="lead-small">
+        {{ gettext('About Why 2') }}
+      
+    </p>
+  </section>
+
+  <!-- Goals -->
+  <section class="section-card fade-in-section" aria-labelledby="goals-heading">
+    <h2 id="goals-heading" class="section-heading">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm1 14h-2v-2h2v2zm0-4h-2V6h2v6z"/></svg>
+      {{ gettext('Our Goals') }}
+    </h2>
+
+    <ol class="plain">
+        {{ gettext('About Goals List') }}
+      
+    </ol>
+    
+    <p class="muted">
+        {{ gettext('About Goal 1') }}
+        
+    </p>
+  </section>
+
+  <!-- How it works -->
+  <section class="section-card fade-in-section" aria-labelledby="how-heading">
+    <h2 id="how-heading" class="section-heading">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+      {{ gettext('How the platform works') }}
+    </h2>
+    <p class="lead-small">
+        {{ gettext('About how 1') }}
+      
+    </p>
+
+    <p class="lead-small">
+        {{ gettext('About How 2') }}
+      
+    </p>
+  </section>
+
+  <!-- For learners / research -->
+  <section class="section-card fade-in-section" aria-labelledby="users-heading">
+    <h2 id="users-heading" class="section-heading">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 12a5 5 0 1 0-.001-10.001A5 5 0 0 0 12 12zm0 2c-4 0-7 2-7 4v2h14v-2c0-2-3-4-7-4z"/></svg>
+      
+      {{ gettext('Who benefits') }}
+    </h2>
+
+    <p class="lead-small">
+        {{ gettext('About who 1') }}
+      
+    </p>
+
+    <p class="muted">
+        {{ gettext('About who 2') }}
+      
+    </p>
+  </section>
+
+  <!-- Founder story -->
+  <section class="section-card fade-in-section" aria-labelledby="founder-heading">
+    <h2 id="founder-heading" class="section-heading">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 12a5 5 0 1 0-.001-10.001A5 5 0 0 0 12 12zm0 2c-4 0-7 2-7 4v2h14v-2c0-2-3-4-7-4z"/></svg>
+      {{ gettext('Who started OKKP') }}
+    </h2>
+
+    <p class="lead-small">
+        {{ gettext('About founder 1') }}
+        
+    </p>
+
+    <p class="lead-small">
+        {{ gettext('About founder 2') }}
+    
+    <br>Alli kawsay! 🫶
+    </p>
+  </section>
+
+  <!-- Call to action -->
+  <section class="section-card fade-in-section" aria-labelledby="cta-heading">
+    <h2 id="cta-heading" class="section-heading">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3z"/></svg>
+      Get Involved!
+    </h2>
+
+    <p class="lead-small">
+        {{ gettext('About call 1') }}
+      
+      <br>
+      <a href="{{ url_for('user_bp.signup') }}" class="btn btn-primary btn-sm mt-2" style="padding:.45rem .75rem;">{{ gettext('Create an account') }}</a>
+    </p>
+
+    <p class="muted" style="margin-top:.6rem;">
+        {{ gettext('About call 2') }}
+      
+      <a href="https://www.instagram.com/openkichwa/" target="_blank" rel="noopener">Instagram</a>
+    </p>
+  </section>
+</div>
+
+<script>
+  // Simple, low-impact intersection observer for fade-in.
+  (function () {
+    if ('IntersectionObserver' in window) {
+      const faders = document.querySelectorAll('.fade-in-section');
+      const options = { threshold: 0.08, rootMargin: '0px' };
+      const observer = new IntersectionObserver(function(entries, obs) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            // Unobserve to keep things simple & save work after revealing
+            obs.unobserve(entry.target);
+          }
+        });
+      }, options);
+      faders.forEach(el => observer.observe(el));
+    } else {
+      // Fallback: reveal all if IntersectionObserver not supported
+      document.querySelectorAll('.fade-in-section').forEach(el => el.classList.add('is-visible'));
+    }
+  })();
+</script>
 {% endblock %}

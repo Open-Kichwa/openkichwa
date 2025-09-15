@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-09-13 18:48+0200\n"
+"POT-Creation-Date: 2025-09-16 00:18+0200\n"
 "PO-Revision-Date: 2025-07-12 19:18+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -18,80 +18,485 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: templates/about.html:6 templates/contribute.html:6 templates/index.html:6
-#: templates/roadmap.html:6 templates/user/login.html:6
-msgid "test"
-msgstr "test_en"
+#: templates/about.html:56
+msgid "About Open Kichwa / Kichwa Paskana"
+msgstr "About Open Kichwa / Kichwa Paskana"
 
-#: templates/common/base.html:44
-msgid "Home Button"
-msgstr "Home"
+#: templates/about.html:58
+msgid "About Header subtitle"
+msgstr "A community-driven, web-based dictionary for all local Kichwa variants in Ecuador — crowd-sourced, open, and designed for research, learning and preservation. "
 
-#: templates/common/base.html:52
+#: templates/about.html:72
+msgid "What Is Open Kichwa"
+msgstr "What Is Open Kichwa?"
+
+#: templates/about.html:76
+msgid "About what 1"
+msgstr "Open Kichwa / Kichwa Paskana is an initiative to build a web-based, open and collaborative dictionary of local Kichwa (Quechua IIb) variants across Ecuador. Contributors add local spellings, translations and pronunciations so the diversity of each indigenous community is represented."
+
+#: templates/about.html:81
+msgid "About what 2"
+msgstr "The idea is to crowd-source how words are written and pronounced in each community to better preserve regional differences and support research and learning."
+
+#: templates/about.html:91
+msgid "Why this project started"
+msgstr "Why this project started"
+
+#: templates/about.html:95
+#, fuzzy
+msgid "About Why 1"
+msgstr "Existing dictionaries (including official ones) are often incomplete and miss many local variants of Kichwa. Because Kichwa was historically a spoken language, written forms vary by specific dialect, making character-based lookups and research more difficult."
+
+#: templates/about.html:100
+#, fuzzy
+msgid "About Why 2"
+msgstr "Better, more complete datasets would help linguists, educators, learners and researches create accurate tools and learning resources."
+
+#: templates/about.html:109 templates/index.html:101
+msgid "Our Goals"
+msgstr "Our Goals"
+
+#: templates/about.html:113
+msgid "About Goals List"
+msgstr "<li>Provide an easy-to-use online dictionary covering many Kichwa words, phrases and their local variants.</li><li>Publish open datasets of Kichwa to support linguistics research and modeling.</li><li>Democratize creation, access and use of Kichwa language resources.</li><li>Empower indigenous communities to preserve and teach their language.</li>"
+
+#: templates/about.html:121
+msgid "About Goal 1"
+msgstr "We commit ourselves to release the compiled data as an openly accessible resource for science, learning and non-commercial projects."
+
+#: templates/about.html:130
+msgid "How the platform works"
+msgstr "How the platform works"
+
+#: templates/about.html:133
+#, fuzzy
+msgid "About how 1"
+msgstr "Kichwa speakers create an account and add the variants from their community. Each entry is labeled with the contributor's community so differences are visible and attributable. Contributors will translate entries presented in English and Spanish and asked how they would translate/pronounce these words or sentences. The added version of the entry will then be displayed as a translation of the respective English and Spanish version."
+
+#: templates/about.html:140
+#, fuzzy
+msgid "About How 2"
+msgstr "Contributors can also upvote entries from their community to increase trust and confidence in a specific version. A simple score counter tracks and displays each user's contributions. More gamified element may be added to encourage contributors."
+
+#: templates/about.html:150
+msgid "Who benefits"
+msgstr "Who benefits?"
+
+#: templates/about.html:154
+#, fuzzy
+msgid "About who 1"
+msgstr "The dictionary supports learners, indigenous speakers, researchers, and developers: anyone who needs accurate, locally grounded Kichwa data."
+
+#: templates/about.html:159
+#, fuzzy
+msgid "About who 2"
+msgstr "Practical ideas include a phonetic-token based search algorithm to better match spoken forms, since Kichwa historically traveled by speech rather than strict orthography."
+
+#: templates/about.html:168
+msgid "Who started OKKP"
+msgstr "Who started OKKP?"
+
+#: templates/about.html:172
+msgid "About founder 1"
+msgstr "My name is Kai — an Information Systems grad. student, programmer and NLP enthusiast. I started Open Kichwa after seeing both the need for better Kichwa datasets and the limitations of existing resources (including LLMs that sometimes mix in non-Ecuadorian Quechua variants)."
+
+#: templates/about.html:177
+msgid "About founder 2"
+msgstr "I have previously spent 4 years learning Japanese and after an amazing exchange in Japan have been in search for a new challenge. After meeting a great person from Ecuador, I felt inspired to learn Spanish and dabble a bit in Kichwa. After talking to more people from indigenous communities I found myself more interested in the Culture and Language. I became quite aware of what is going on in Ecuador and how Kichwa is slowly disappearing. I find it sad that the proficiency in Kichwa of young people is decreasing. I hope to be able to create a useful project that will empower more research and development of better learning resources for Kichwa. I want Kichwa to not be my own project for ever, I want it to become a community effort that is being pushed and shouldered by many people."
+
+#: templates/about.html:191
+msgid "About call 1"
+msgstr "Want to help? The main way is: <strong>if you speak Kichwa from Ecuador, create an account and add your community's versions.</strong>"
+
+#: templates/about.html:194 templates/contribute.html:34
+msgid "Create an account"
+msgstr "Create an account"
+
+#: templates/about.html:198
+msgid "About call 2"
+msgstr "Developers, designers or administrators: reach out via"
+
+#: templates/contribute.html:10
+msgid "Do you want to contribute?"
+msgstr "Do you want to contribute?"
+
+#: templates/contribute.html:12
+msgid "Contribute Headline text"
+msgstr "<p class="lead">Great! <strong>Open Kichwa</strong> is a collaborative platform and our goals can only be achieved if many people work together. </p><p>Below we’ll explain the different ways you can contribute:</p>"
+
+#: templates/contribute.html:30
+msgid "Speak Kichwa and you are from Ecuador?"
+msgstr "Speak Kichwa and you are from Ecuador?"
+
+#: templates/contribute.html:36
+#, fuzzy
+msgid "Contribute Speak Kichwa"
+msgstr "add dictionary entries with the Kichwa variants from your own community and help us complete the dictionary. You can also upvote existing entries to make sure they are accurate. Don’t forget to share the website with your friends and help us attract more contributors."
+
+#: templates/contribute.html:57
+msgid "Programmer, Designer, or Skilled Contributor?"
+msgstr "Programmer, Designer, or Skilled Contributor?"
+
+#: templates/contribute.html:58
+#, fuzzy
+msgid "Contribute Programmer"
+msgstr "<p> If you think your skills can contribute to the project in some way, contact us directly. We especially appreciate help with programming, web design, graphics, and administration.</p><p>👉 Reach out via <a href="https://instagram.com/openkichwa" target="_blank">Instagram</a> or send us an <a href="mailto:your@email.com">Email</a>. </p>"
+
+#: templates/contribute.html:87
+msgid "Found a bug or have suggestions?"
+msgstr "Found a bug or have suggestions?"
+
+#: templates/contribute.html:89
+msgid "Contribute Problems Bugs"
+msgstr "<p>Please forward any bugs, problems, or suggestions to us. This is very important to create a smooth experience and improve the platform.</p><p>Send your reports via <a href="https://instagram.com/openkichwa" target="_blank">Instagram</a> or <a href="mailto:your@email.com">Email</a>.</p><p class="mb-0"> When reporting, please be as precise as possible and tell us what you did, so we can recreate the situation and fix the issue.</p>"
+
+#: templates/index.html:10
+msgid "Search"
+msgstr "Search"
+
+#: templates/index.html:13
+msgid "Searching has not been implemented yet"
+msgstr "Searching has not been implemented yet"
+
+#: templates/index.html:22
+msgid "An open, collaborative dictionary of Ecuadorian Kichwa"
+msgstr "An open, collaborative dictionary of Ecuadorian Kichwa"
+
+#: templates/index.html:24
+msgid "Learn More"
+msgstr "Learn More"
+
+#: templates/index.html:25
+#, fuzzy
+msgid "Contribute"
+msgstr "Contribute"
+
+#: templates/index.html:33
+msgid "What is Open Kichwa?"
+msgstr "What is Open Kichwa?"
+
+#: templates/index.html:35
+#, fuzzy
+msgid "Index About"
+msgstr "A web-based, collaborative effort to preserve and share all local variants of Kichwa in Ecuador. Our goal is to build an open dictionary and language resource for everyone."
+
+#: templates/index.html:39
+msgid "Read More"
+msgstr "Read More"
+
+#: templates/index.html:46
+msgid "Featured Words"
+msgstr "Featured Words"
+
+#: templates/index.html:47
+msgid "Kichwa, one word at a time"
+msgstr "Kichwa, one word at a time"
+
+#: templates/index.html:80
+#, fuzzy
+msgid "How You Can Contribute"
+msgstr "How You Can Contribute"
+
+#: templates/index.html:83
+msgid "1. Create an Account"
+msgstr "1. Create an Account"
+
+#: templates/index.html:84
+msgid "Join the community and share your knowledge."
+msgstr "Join the community and share your knowledge."
+
+#: templates/index.html:87
+msgid "2. Add Words"
+msgstr "2. Add Words"
+
+#: templates/index.html:88
+msgid "Submit your community’s versions and pronunciations."
+msgstr "Submit your community’s versions and pronunciations."
+
+#: templates/index.html:91
+msgid "3. Vote & Collaborate"
+msgstr "3. Vote & Collaborate"
+
+#: templates/index.html:92
+msgid "Support others’ contributions and grow together."
+msgstr "Support others’ contributions and grow together."
+
+#: templates/index.html:106
+msgid "Dictionary"
+msgstr "Dictionary"
+
+#: templates/index.html:107
+msgid "Build a large, easy-to-use Kichwa dictionary."
+msgstr "Build a large, easy-to-use Kichwa dictionary."
+
+#: templates/index.html:114
+msgid "Datasets"
+msgstr "Datasets"
+
+#: templates/index.html:115
+msgid "Create and release open linguistic datasets."
+msgstr "Create and release open linguistic datasets."
+
+#: templates/index.html:122
+msgid "Access"
+msgstr "Access"
+
+#: templates/index.html:123
+msgid "Democratize language resources for all."
+msgstr "Democratize language resources for all."
+
+#: templates/index.html:130
+msgid "Empowerment"
+msgstr "Empowerment"
+
+#: templates/index.html:131
+msgid "Support communities to preserve their language."
+msgstr "Support communities to preserve their language."
+
+#: templates/roadmap.html:256
+#, fuzzy
+msgid "Our Roadmap"
+msgstr "Our Roadmap"
+
+#: templates/roadmap.html:262
+msgid "First Version Public"
+msgstr "First Version Public"
+
+#: templates/roadmap.html:264
+#, fuzzy
+msgid "Roadmap 1"
+msgstr "The first version of our Website is released to the public."
+
+#: templates/roadmap.html:267
+msgid "September"
+msgstr "September"
+
+#: templates/roadmap.html:274
+#, fuzzy
+msgid "Beta Test"
+msgstr "Beta Test"
+
+#: templates/roadmap.html:276
+#, fuzzy
+msgid "Roadmap 2"
+msgstr "The features of the platform have been developed far enough to allow for a first test of the core features. Access Codes for the beta test will start to be handed out."
+
+#: templates/roadmap.html:280
+msgid "October"
+msgstr "October"
+
+#: templates/roadmap.html:280 templates/roadmap.html:292
+msgid "November"
+msgstr "November"
+
+#: templates/roadmap.html:287
+msgid "First Results from the Beta"
+msgstr "First Results from the Beta"
+
+#: templates/roadmap.html:289
+#, fuzzy
+msgid "Roadmap 3"
+msgstr "After the Beta test, the first results, insights and compiled data will be published"
+
+#: templates/roadmap.html:299
+msgid "Improved Dictionary Search Algorithm"
+msgstr "Improved Dictionary Search Algorithm"
+
+#: templates/roadmap.html:301
+#, fuzzy
+msgid "Roadmap 4"
+msgstr "Adapting search algorithms to better fit the specifics of the Kichwa language and allow for more accurate searches for words and phrases."
+
+#: templates/roadmap.html:311
+msgid "Public Release"
+msgstr "Public Release"
+
+#: templates/roadmap.html:313
+#, fuzzy
+msgid "Roadmap 5"
+msgstr "Official launch to the public with enhanced features, improved performance, and a polished user experience based on beta feedback."
+
+#: templates/roadmap.html:324
+msgid "Verb Conjungator"
+msgstr "Verb Conjungator"
+
+#: templates/roadmap.html:326
+#, fuzzy
+msgid "Roadmap 6"
+msgstr "Simple web based tool to allow the lookup of the correct conjungation of any Kichwa verb in any conjungation."
+
+#: templates/roadmap.html:336
+msgid "Publication of The First Full Dataset"
+msgstr "Publication of The First Full Dataset"
+
+#: templates/roadmap.html:338
+#, fuzzy
+msgid "Roadmap 7"
+msgstr "After compiling and cleaning the data after the publication of OKKP, the first (hopefully) large datasets will be released."
+
+#: templates/roadmap.html:347
+msgid "Future Features"
+msgstr "Future Features"
+
+#: templates/roadmap.html:349
+#, fuzzy
+msgid "Roadmap 8"
+msgstr "The Sky is the limit and we will surely received many ideas and suggestions for more features!"
+
+#: templates/common/base.html:49
 msgid "About"
 msgstr "About"
 
-#: templates/common/base.html:55
+#: templates/common/base.html:52
 msgid "contribute"
 msgstr "Contribute"
 
-#: templates/common/base.html:58
+#: templates/common/base.html:55
 msgid "roadmap"
 msgstr "Roadmap"
+
+#: templates/common/base.html:63
+msgid "Logout"
+msgstr "Logout"
+
+#: templates/common/base.html:68
+msgid "Login"
+msgstr "Login"
+
+#: templates/common/base.html:72
+msgid "Sign up"
+msgstr "Sign up"
+
+#: templates/common/base.html:132 templates/user/signup.html:105
+#, fuzzy
+msgid "Terms"
+msgstr "Terms"
+
+#: templates/common/base.html:138 templates/legal/imprint.html:5
+msgid "Imprint"
+msgstr "Imprint"
+
+#: templates/common/base.html:144
+msgid "Contact us"
+msgstr "Contact us"
+
+#: templates/common/base.html:150
+msgid "Instagram"
+msgstr "Instagram"
+
+#: templates/legal/terms.html:51
+msgid "This page is only available in <strong>English</strong>"
+msgstr "This page is only available in <strong>English</strong>"
+
+#: templates/user/login.html:11
+#, fuzzy
+msgid "Please sign in"
+msgstr "Please sign in"
+
+#: templates/user/login.html:35
+msgid "Sign in"
+msgstr "Sign in"
+
+#: templates/user/login.html:36
+msgid "New User?"
+msgstr "New User?"
+
+#: templates/user/login.html:36
+msgid "Register now"
+msgstr "Register now"
 
 #: templates/user/signup.html:11
 msgid "Please register"
 msgstr "Please register"
 
-#: templates/user/signup.html:13 user/forms.py:25
+#: templates/user/signup.html:13
 msgid "Username"
 msgstr "Username"
 
-#: templates/user/signup.html:24 user/forms.py:12 user/forms.py:53
+#: templates/user/signup.html:19
+#, fuzzy
+msgid "Username tooltip"
+msgstr "This username may be displayed to other users on the website."
+
+#: templates/user/signup.html:32
 msgid "Email"
 msgstr "Email"
 
-#: templates/user/signup.html:35 user/forms.py:9 user/forms.py:54
+#: templates/user/signup.html:38
+msgid "Email tooltip"
+msgstr "Please provide a vaild email to us, so we can verify that you actually own it."
+
+#: templates/user/signup.html:51
 msgid "Password"
 msgstr "Password"
 
-#: templates/user/signup.html:46 user/forms.py:18
+#: templates/user/signup.html:57
+#, fuzzy
+msgid "Password tooltip"
+msgstr "Please choose a strong password with at least 6 characters."
+
+#: templates/user/signup.html:70
 msgid "Repeat Password"
 msgstr "Repeat Password"
 
-#: templates/user/signup.html:57 user/forms.py:24
+#: templates/user/signup.html:81
 msgid "Beta code"
 msgstr "Beta code"
 
-#: user/forms.py:21
-msgid "Password must match"
-msgstr "Password must match"
+#: templates/user/signup.html:92
+msgid "Community"
+msgstr "Community"
 
-#: user/forms.py:34
-msgid "Email has already been registered"
-msgstr "Email has already been registered"
+#: templates/user/signup.html:104
+msgid "TermsPart1"
+msgstr "You agree and have read our "
 
-#: user/forms.py:37
-msgid "Passwords must match"
-msgstr "Passwords must match"
+#: templates/user/signup.html:106
+msgid "TermsPart2"
+msgstr ""
 
-#: user/forms.py:41
-msgid "Invalid code, please check spelling"
-msgstr "Invalid code, please check spelling"
+#: templates/user/signup.html:117
+#, fuzzy
+msgid "Already registered?"
+msgstr "Already registered?"
 
-#: user/forms.py:45
-msgid "Code has already been claimed"
-msgstr "Code has already been claimed"
+#: templates/user/signup.html:117
+msgid "Login now"
+msgstr "Login now"
 
-#: user/forms.py:48
-msgid "Wrong type of code"
-msgstr "Wrong type of code"
-
-#: user/views.py:24
+#: user/views.py:25
 msgid "You are already logged in"
 msgstr "You are already logged in"
 
-#: user/views.py:34
+#: user/views.py:35
 msgid "Invalid email and/or password"
 msgstr "Invalid email and/or password"
+
+#: user/views.py:46
+#, fuzzy
+msgid "You are already registered"
+msgstr "You are already registered"
+
+#: user/views.py:62
+#, fuzzy
+msgid "You have been registered!"
+msgstr "You have been registered!"
+
+#~ msgid "Home Button"
+#~ msgstr "Home"
+
+#~ msgid "Password must match"
+#~ msgstr "Password must match"
+
+#~ msgid "Passwords must match"
+#~ msgstr "Passwords must match"
+
+#~ msgid "Invalid code, please check spelling"
+#~ msgstr "Invalid code, please check spelling"
+
+#~ msgid "Code has already been claimed"
+#~ msgstr "Code has already been claimed"
+
+#~ msgid "Wrong type of code"
+#~ msgstr "Wrong type of code"
 

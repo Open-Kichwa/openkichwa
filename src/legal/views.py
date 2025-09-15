@@ -6,6 +6,13 @@ bp = Blueprint("legal_bp", __name__)
 def terms():
      return render_template("legal/terms.html")
 
+@bp.route("/imprint")
+def imprint():
+     return render_template("legal/imprint.html")
+
+
+
+
 @bp.route("/robots.txt")
 def robots():
      robots =  """

@@ -2,7 +2,10 @@ from flask import (Blueprint, render_template, request, session, url_for, make_r
 
 bp = Blueprint("index_bp", __name__)
 
+from .models import count_visit
+
 @bp.route("/")
+@count_visit("/")
 def index():
     return render_template("index.html")
 

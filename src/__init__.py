@@ -23,16 +23,16 @@ def inject_get_locale():
 
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
-from . import index
-app.register_blueprint(index.bp)
+from .routes.common import views
+app.register_blueprint(views.bp)
 
-from .legal.views import bp as legal_bp
+from .routes.legal.views import bp as legal_bp
 app.register_blueprint(legal_bp)
 
-from .user.views import bp as user_bp
+from .routes.user.views import bp as user_bp
 app.register_blueprint(user_bp)
 
-from .user.models import User
+from .routes.user.models import User
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -42,7 +42,8 @@ def load_user(user_id):
 
 with app.app_context():
 
-    from .user import models
+    from .routes.user import models
+    from .routes.common import models
 
     if app.config.get("TESTING") or app.config.get("DEBUG") or app.config.get("DEVELOPMENT"):
         db.create_all() 
@@ -63,7 +64,7 @@ import click
 @app.cli.command("create-beta")
 @click.option("--created-for", default=None, help="Optional description of who this code is for")
 def create_one_code(created_for):
-    from .user.models import AccessCode, AccessCodeTypes
+    from .routes.user.models import AccessCode, AccessCodeTypes
     
 
     while True:

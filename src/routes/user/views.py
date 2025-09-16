@@ -6,7 +6,8 @@ from datetime import datetime
 from .forms import RegisterForm, LoginForm
 from .models import User, AccessCode
 
-from .. import db, bcrypt, babel
+from ... import db, bcrypt, babel
+from ...routes.common.models import count_visit
 
 bp = Blueprint("user_bp", __name__)
 
@@ -39,6 +40,7 @@ def login():
           form = LoginForm()
           return render_template("user/login.html", form=form)
 
+@count_visit("/signup")
 @bp.route("/signup", methods=["GET", "POST"])
 def signup():
      if request.method == "POST":

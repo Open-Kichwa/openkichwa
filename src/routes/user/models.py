@@ -2,7 +2,7 @@ from enum import Enum
 from datetime import datetime
 from flask_login import UserMixin
 
-from .. import db, bcrypt
+from ... import db, bcrypt
 
 class User(UserMixin, db.Model):
     __tablename__ = "users"
